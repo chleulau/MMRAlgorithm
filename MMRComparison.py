@@ -53,7 +53,7 @@ for au in actions:
 		for profile in g.contingencies:
 			a1[0].append(float(g[profile][0]))
 			a1[1].append(float(g[profile][1]))
-		r = list(gambit.nash.lcp_solve(g, use_strategic=True, rational=False, stop_after=1)[0])
+		r = list(gambit.nash.lcp_solve(g, use_strategic=True, rational=False)[0])
 		r = [r[:au], r[au:]]
 		ei, ej = epayof(a1, r[0], r[1])
 		k = cvxtest(a1, au * au)
